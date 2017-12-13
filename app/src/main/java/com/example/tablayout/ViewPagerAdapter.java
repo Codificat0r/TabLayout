@@ -48,7 +48,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 customFragment = customFragment.newInstance(arguments);
                 break;
         }
-        return null;
+        return customFragment;
     }
 
     @Override

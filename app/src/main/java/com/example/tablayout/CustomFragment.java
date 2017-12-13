@@ -1,6 +1,6 @@
 package com.example.tablayout;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -29,7 +29,7 @@ public class CustomFragment extends Fragment {
         super.onCreateView(inflater,container,savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_main,container,false);
         txvMessage = rootView.findViewById(R.id.txvMessage);
-
+        txvMessage.setText(getArguments().getString(KEY_MESSAGE));
         return rootView;
     }
 }
