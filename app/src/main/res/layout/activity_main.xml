@@ -10,12 +10,15 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
+        <!-- Hay que modificar themes para que sea correcto si solo cambiamos los colores del titulo no se cambia el de los boton-
+        citos de opciones-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         </android.support.v7.widget.Toolbar>
 
@@ -23,7 +26,9 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable"/>
+            app:tabMode="scrollable"
+            app:tabTextColor="@android:color/white"
+            app:tabSelectedTextColor="@android:color/primary_text_light"/>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

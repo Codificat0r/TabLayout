@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TabLayout</string>
+    <string-array name="tabs">
+        <item>Tab1</item>
+        <item>Tab2</item>
+        <item>Tab3</item>
+        <item>Tab4</item>
+        <item>Tab5</item>
+    </string-array>
+    <integer-array name="drawables">
+        <item>@drawable/uno</item>
+        <item>@drawable/dos</item>
+        <item>@drawable/tres</item>
+        <item>@drawable/cuatro</item>
+        <item>@drawable/cinco</item>
+    </integer-array>
 </resources>

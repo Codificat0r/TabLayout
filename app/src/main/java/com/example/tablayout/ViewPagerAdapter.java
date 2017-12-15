@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+
 /**
  * Created by usuario on 13/12/17.
  */
@@ -12,10 +14,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private int pageCount;
+    private ArrayList<String> titulos;
 
-    public ViewPagerAdapter(FragmentManager supportFragmentManager, int pageCount) {
+    public ViewPagerAdapter(FragmentManager supportFragmentManager, int pageCount, ArrayList<String> titulos) {
         super(supportFragmentManager);
         this.pageCount = pageCount;
+        this.titulos = titulos;
     }
 
     public ViewPagerAdapter(FragmentManager supportFragmentManager) {
@@ -28,23 +32,23 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         Bundle arguments = new Bundle();
         switch (position) {
             case 0:
-                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment 1");
+                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment uno");
                 customFragment = customFragment.newInstance(arguments);
                 break;
             case 1:
-                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment 2");
+                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment dos");
                 customFragment = customFragment.newInstance(arguments);
                 break;
             case 2:
-                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment 3");
+                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment tres");
                 customFragment = customFragment.newInstance(arguments);
                 break;
             case 3:
-                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment 4");
+                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment cuatro");
                 customFragment = customFragment.newInstance(arguments);
                 break;
             case 4:
-                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment 5");
+                arguments.putString(CustomFragment.KEY_MESSAGE, "Fragment cinco");
                 customFragment = customFragment.newInstance(arguments);
                 break;
         }
@@ -53,6 +57,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return pageCount;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return titulos.get(position);
     }
 }
